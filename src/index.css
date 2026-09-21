@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@layer base {
+  :root {
+    --bg-base: #dcebf8;
+    --bg-surface-primary: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-tertiary: #94a3b8;
+    --border-glass: rgba(255, 255, 255, 0.6);
+    --accent-primary: #0ea5e9;
+    --canvas-start: #dbeafe;
+    --canvas-end: #eff6ff;
+    --glass-card: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.7);
+    --glass-border-bottom: rgba(255, 255, 255, 0.2);
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --glow-sky: rgba(56, 189, 248, 0.2);
+  }
+
+  .dark {
+    --bg-base: #060b14;
+    --bg-surface-primary: #0f172a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --border-glass: rgba(255, 255, 255, 0.12);
+    --accent-primary: #38bdf8;
+  }
+  html{
+    @apply transition-colors duration-300 ease-in-out
+  }
+  @keyframes dot-dark {
+0%,100%{
+  transform: translate(0px ,0px);
+}
+25%{
+     transform: translate(20px, -30px);
+  
+}
+50%{
+      transform: translate(-15px, -20px);
+
+}
+75%{
+    transform: translate(30px, 10px);
+}
+    
+  }
+}
