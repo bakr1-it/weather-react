@@ -68,36 +68,6 @@ export function useSound() {
   return { playSound };
 }
 
-export function useLoadingSound(){
-const loadingSound =useRef(null);
-const startLoadingSound  =()=>{
-
-  if(loadingSound.current) return;
-const AudioContextLoadingSound = new (window.AudioContext || window.webkitAudioContext) ();
-const sound = AudioContextLoadingSound.createOscillator();
-const gain = AudioContextLoadingSound.createGain();
-
-sound.frequency.setValueAtTime(300,AudioContextLoadingSound.currentTime);
-gain.gain.setValueAtTime(0.10  , AudioContextLoadingSound.currentTime);
-sound.connect(gain);
-gain.connect(AudioContextLoadingSound.destination);
-sound.start();
-loadingSound.current = {gain , sound ,AudioContextLoadingSound}
 
 
-}; 
-const closeLoadingSound = ()=>{
 
-if(!loadingSound.current) return;
-const {gain , sound ,AudioContextLoadingSound} = loadingSound.current;
-gain.gain.exponentialRampToValueAtTime(0.001 , AudioContextLoadingSound.currentTime + 0.3);
-sound.stop(AudioContextLoadingSound.currentTime + 0.2); 
-loadingSound.current=null;
-
-}
-
-
-return {startLoadingSound , closeLoadingSound}
-
-
-}
