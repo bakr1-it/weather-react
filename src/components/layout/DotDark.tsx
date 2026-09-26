@@ -1,6 +1,7 @@
+import  { memo } from "react"
 
 
-export default function DotDark() {
+ function DotDark() {
   return (
     <div className='overflow-hidden absolute inset-0'>
 {[...Array(50)].map((_,i)=>{
@@ -27,3 +28,4 @@ animation : `dot-dark ${15 * Math.random() + 10}s ease-in-out infinite`,
     </div>
   )
 }
+export default memo(DotDark)
