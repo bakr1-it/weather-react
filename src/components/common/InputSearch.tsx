@@ -1,5 +1,5 @@
 import Button from "@/components/common/Button";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo , useState } from "react";
 
 
 import useCitySearch from "../../Hooks/useCitySearch.js"
@@ -41,6 +41,7 @@ const cities= useMemo(()=>{
 
  
   const [openCity,setOpenCity]=useState(false);
+
 /* 
 todo get city when click 
 */
@@ -67,7 +68,6 @@ return (
 <form onSubmit={(e) =>{
   e.preventDefault()
   getSearch(search);
-
 }
 
 } className="relative flex items-center w-full gap-4">
