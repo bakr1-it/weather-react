@@ -1,5 +1,5 @@
 import Button from "@/components/common/Button";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 
 import useCitySearch from "../../Hooks/useCitySearch.js"
@@ -23,7 +23,7 @@ const arrMap = new Map();
 
 citys.forEach((city)=>{
 
-const key = `${city.name?.trim()?.toLowerCase()}-${city?.country?.trim().toLowerCase()}`
+const key = `${city.name?.trim().toLowerCase()}-${city?.country?.trim().toLowerCase()}`
 if(!arrMap.has(key)){
   arrMap.set(key,city);
 }
@@ -34,7 +34,9 @@ return Array.from(arrMap?.values());
   }
   const [search,setSearch]=useState("");
   const {result } = useCitySearch(search);
-const cities=removeCityIsDublcate(result);
+const cities= useMemo(()=>{
+  return removeCityIsDublcate(result);
+},[result])
 
 
  

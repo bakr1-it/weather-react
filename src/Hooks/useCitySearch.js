@@ -23,7 +23,8 @@ async function fetchCity(){
     setIsLoading(true);
 try{
 const data = await getCitySearch(controller.signal , dataQuery);
-setResult(data.data?.results);
+
+setResult(data.data?.results || [])
 }catch(error){
 setResult([]);
 if(error.name== "CanceledError" || error.name =="AbortError")

@@ -46,7 +46,7 @@ navigator.geolocation.getCurrentPosition((postion)=>{
   role="dialog"
   aria-modal="true"
 >
-<div className='relative mx-auto w-full max-w-lg md:max-w-xl overflow-hidden rounded-2xl border  border-white/40 bg-white/20 p-6 md:p-10 shadow-2xl backdrop-blur-2xl transition-all duration-300 dark:border-white/10 dark:bg-slate-900'>
+<div className='relative mx-auto w-full max-w-lg md:max-w-xl overflow-hidden rounded-2xl border  border-white/40 bg-white/20 p-6 md:p-10 shadow-2xl backdrop-blur-md transition-all duration-300 dark:border-white/10 dark:bg-slate-900'>
 <div className="text font-serif  text-xl flex justify-center items-center ">
 <h1>{t("locationPrompt")}</h1>
 </div>

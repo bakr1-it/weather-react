@@ -60,6 +60,7 @@ export function useSound() {
 
       osc.start();
       osc.stop(ctx.currentTime + config.duration);
+    osc.onended = ()=>{ctx.close()}
     } catch {
 
     }
