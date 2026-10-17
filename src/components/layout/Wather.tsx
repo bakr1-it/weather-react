@@ -46,7 +46,7 @@ export default function Wather({city}:{city:any}) {
 </div>
 
 <div className="flex justify-center items-center h-80 flex-col gap-2">
-  <h1 className='text-8xl md:text-9xl text-slate-900 font-extralight dark:text-white tracking-tighter'>37</h1>
+  <h1 className='text-8xl md:text-9xl text-slate-900 font-extralight dark:text-white tracking-tighter'>{city.temp}</h1>
 <IconOpenWeather icon={city?.icon} />
 
 </div>
